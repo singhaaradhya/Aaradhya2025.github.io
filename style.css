@@ -1,53 +1,219 @@
-body{
-  margin:0;
-
-  font-family: Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
-nav{
+
+body{
+    background-color: #000;
+    color: #b3b3b3;
+}
+.app{
+    width:100%;
+    height:100vh;
+}
+
+.topbar{
+    height: 64px;
+    background-color: #000;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid #1f1f1f;
+}
+.topbar-left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 220px;
+}
+.logo{
+    height: 38px;
+}
+.Home-icon{
+    height: 56px;
+    width: 56px;
+    background-color: #1f1f1f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.Home-icon i{
+    color: white;
+    font-size: 22px;
+}
+.Home-icon:hover{
+    background-color: #2a2a2a;
+}
+.topbar-center{
+    flex: 2;
+    display:flex;
+    justify-content: center;
+}
+.search-box{
+    width:460px;
+    height: 48px;
+    background-color: #1f1f1f;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    transition: background-color 0.2s ease;
+    gap: 12px;
+}
+.search-box i{
+    color:#b3b3b3;
+    font-size:18px;
+    margin-right: 12px;
+}
+.search-box input{
+    flex: 1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:white;
+    width:100%;
+    font-size: 15px;
+}
+.search-box:hover {
+  background-color: #2a2a2a;
+}
+.topbar-right{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 320px;
+  justify-content: flex-end;
+}
+.topbar-right a {
+    color:#b3b3b3;
+    text-decoration:none;
+    font-weight: 600;
+    font-size: 14px;
+    align-items: center;
+    gap: 16px;
+}
+
+.topbar-right a:hover{
+    color:white;
+}
+.device-icon{
+    width: 32px;
+  height: 32px;
+  background-color: #1f1f1f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.device-icon i {
+  color: white;
+  font-size:14px;
+}
+.divider {
+  color: #404040;
+}
+.install-app {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.install-app i {
+  font-size: 14px;
+}
+.login-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+}
+.main-layout {
+  display: flex;
+  
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #000;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #121212;
+  min-height:calc (100vh - 64px - 64px);
+}
+.preview-bar {
+  height: 64px;
+  background: linear-gradient(90deg, #af2896, #509bf5);
+  position:fixed;
+  left:0%;
+  right:0%;
+  bottom:0%;
+}
+.sidebar{
+  background-color:#000;
+  width: 280px;
+  padding: 16px;
+  border-radius: 1px solid #fafafa;
+}
+.library-header{
   display:flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
-  padding:1rem;
+  margin-bottom: 20px;
 }
-.logo{
-  color:#fff;
-  font-size: 1.5rem;
+.library-title{
+  font-size: 16px;
+  font-weight: 600;
+  color:white;
 }
-.menu{
-  display: none;
-  flex-direction: column;
-  background-color: black;
-  position: absolute;
-  top: 60px;
-  right:20px;
-  width:200px;
-}
-
-.menu a{
-  color: azure;
-  padding:1em;
-  text-decoration:none ;
-  display: block;
-}
-
-.hamburger {
-  font-size: 2rem;
-  color: aliceblue;
+.add-btn{
+  background: none;
+  border: none;
+  color:#b3b3b3;
+  font-size: 22px;
   cursor: pointer;
 }
-/* tablet & desktop */
-@media(min-width:768px){
+.add-btn:hover{
+  color:white;
+}
+.library-box{
+  background-color: #121212;
+  padding: 16px;
+  border-radius: 8px;
+}
+.library-box h4{
+  color:white;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.library-box p{
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.create-playlist-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-  .menu{
-    display:flex;
-    flex-direction: row;
-    position: static;
-    background: none;
-    width:auto;
-  }
-  .hamburger{
-    display: none;
-  }
-
+.create-playlist-btn:hover {
+  transform: scale(1.05);
 }

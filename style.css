@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,7 +21,6 @@ body{
     justify-content: space-between;
     padding: 0 24px;
     border-bottom: none;
-  
 }
 .topbar-left{
     display: flex;
@@ -157,6 +156,8 @@ body{
   gap: 1rem;
   min-height: 0;
   border-radius: 0.5rem;
+  padding-bottom: 7rem;
+  width:100%;
 }
 
 .main-content::-webkit-scrollbar {
@@ -381,10 +382,10 @@ body{
 }
 .play-btn {
   position: absolute;
-  bottom: 5.2rem;
+  bottom: 4.5rem;
   right: 1rem;
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   border: none;
   background-color: #1db954;
@@ -393,16 +394,22 @@ body{
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transform: translateY(8px);
-  transition: all 0.25s ease;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
-
-.music-card:hover .play-btn {
+.play-btn:hover {
+  transform: scale(1.08);
+}
+.music-card:hover .play-btn,
+.album-card:hover .play-btn,
+.radio-card:hover .play-btn,
+.chart-card:hover .play-btn,
+.artist-card:hover .play-btn {
   opacity: 1;
   transform: translateY(0);
 }
-
 .content-wrapper {
   padding: 1.5rem;
 }
@@ -430,6 +437,7 @@ body{
   transition: transform 0.3s ease;
   aspect-ratio: 1/1;
   object-fit: cover;
+  position:relative;
 }
 .artist-card p{
   font-size: 0.8rem;
@@ -441,27 +449,269 @@ body{
   color: white;
   font-size: 0.9rem;
 }
-
 .artist-card:hover img {
   transform: scale(1.03);
 }
+.album-card{
+  width: 11rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.25s ease;
+  flex: 0 0 auto;
+}
+.album-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.4rem;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+.album-card h4 {
+  color: white;
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+}
+.album-card p {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+  margin: 0;
+}
+.album-card:hover {
+  background-color: #181818;
+  transform: translateY(-2px);
+}
+.radio-card{
+  min-width: 11rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  position:relative;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+.radio-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.radio-card h4 {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+.radio-card p {
+  font-size: 0.75rem;
+  color: #b3b3b3;
+}
+.radio-card:hover {
+  background-color: #181818;
+  transform: translateY(-2px);
+}
+.chart-card{
+  min-width: 11rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  position: relative;
+}
+.chart-card:hover{
+  background-color: #181818;
+  transform: translateY(-2px);
+} 
+.chart-card img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+.chart-card h4 {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+.chart-card p {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+  line-height: 1.3;
+}
+ .spotify-footer {
+  width: 100%;
+  margin-top: 4rem;
+  padding: 3rem 2rem 2rem;
+  color: #b3b3b3;
+  font-size: 0.9rem;
+}
+.footer-container {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 3rem;
+}
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-width: 10rem;
+  flex: 1;
+}
+.footer-column h4 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+.footer-column a {
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-column a:hover {
+  color: white;
+}
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: auto;
+  align-self: flex-start;
+}
+.footer-social a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #292929;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+.footer-social a:hover {
+  background-color: #3e3e3e;
+}
+.footer-links {
+  display: flex;
+  gap: 3rem;
+  flex: 1;
+  flex-wrap: nowrap;
+}
+.spotify-footer {
+  margin-top: 4rem;
+  padding: 3rem 2rem 6rem;
+  color: #b3b3b3;
+  font-size: 0.9rem;
+} 
+.spotify-footer hr {
+  margin: 1.5rem 0 1rem 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 14rem;
+  }
+  .search-box {
+    width: 320px;
+  }
+  .topbar-right {
+    gap: 10px;
+    min-width: auto;
+  }
+  .card-row {
+    gap: 0.7rem;
+  }
+  .music-card,
+  .album-card,
+  .radio-card,
+  .chart-card,
+  .artist-card {
+    min-width: 9rem;
+  }
+}
 @media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
   .sidebar {
     display: none;
   }
-  .music-card {
-    min-width: 10rem;
+  .main-layout {
+    padding: 0;
+  }
+  .main-content {
+    border-radius: 0;
+  }
+  .search-box {
+    display: none;
+  }
+  .topbar-right a {
+    display: none;
+  }
+  .login-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+  .music-card,
+  .album-card,
+  .radio-card,
+  .chart-card,
+  .artist-card {
+    min-width: 8rem;
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .footer-social {
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    height: 28px;
+  }
+  .Home-icon {
+    height: 42px;
+    width: 42px;
+  }
+  .topbar {
+    padding: 0 12px;
+  }
+  .preview-text {
+    display: none;
+  }
+  .preview-btn {
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+  }
+  .music-card h4,
+  .album-card h4 {
+    font-size: 0.75rem;
+  }
+  .music-card p,
+  .album-card p {
+    font-size: 0.65rem;
+  }
+  .play-btn {
+    width: 2.3rem;
+    height: 2.3rem;
+    bottom: 3.8rem;
   }
 }
